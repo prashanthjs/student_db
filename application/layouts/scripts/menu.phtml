@@ -1,0 +1,53 @@
+<?php
+
+$fc = Zend_Controller_Front::getInstance();
+$baseUrl =  $fc->getBaseUrl();
+
+$html = array ();
+
+$iterator = new RecursiveIteratorIterator ( $this->container, RecursiveIteratorIterator::SELF_FIRST );
+$prevDepth = - 1;
+foreach ( $iterator as $page ) {
+    $depth = $iterator->getDepth ();
+    $resource = $page->getResource();
+    $privilage = $page->getPrivilege();
+  
+    
+    	$isActive = $page->isActive ( true );
+    if ($depth > $prevDepth) {
+        $html [] = '<ul>' . "\n";
+    } else if ($prevDepth > $depth) {
+        for($i = $prevDepth; $i > $depth; $i --) {
+            $html [] = '</li>' . "\n";
+            $html [] = '</ul>' . "\n";
+        }
+        $html [] = '    </li>' . "\n";
+    } else {
+        $html [] = '    </li>' . "\n";
+    }
+    if ($page->haspages ()) {
+        $liClass = $isActive ? ' class="current"' : ' class="submenu"';
+    } else {
+        $liClass = $isActive ? ' class="current"' : '';
+    }
+   
+    
+    $html [] = '<li '.$liClass.'>' . "\n";
+    if($page->get('image')){
+    	$image='<img src="'.$baseUrl.'/'.$page->get('image').'" /> ';
+    	
+    	$html [] = '<a href="' . $page->getHref () . '"> ' .$image. $page->getLabel () . ' </a>' . "\n";
+    }
+    else {
+    	$html [] = '<a href="' . $page->getHref () . '">' . $page->getLabel () . '</a>' . "\n";
+    }
+   
+    $prevDepth = $depth;
+}
+
+echo join ( PHP_EOL, $html );
+echo '</li>';
+echo "</ul>";
+echo '<a href="#collapse" id="menucollapse">&#9664; Collapse sidebar</a> ';
+
+?>

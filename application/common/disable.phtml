@@ -1,0 +1,17 @@
+<h1>
+	<img alt=""
+		src="<?php echo $this->baseUrl(); ?>/includes/img/icons/posts.png">
+	Status Successfully Updated
+</h1>
+
+<?php 
+if(isset($this->javascriptRedirection)){
+?>
+<script>
+$(function(){
+window.parent.gridRefresh();
+});
+</script>
+<?php 
+}
+?>

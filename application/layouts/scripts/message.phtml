@@ -1,0 +1,35 @@
+<?php
+$messages = Zend_Controller_Action_HelperBroker::getStaticHelper ( 'FlashMessenger' );
+
+foreach ( $messages as $message ) {
+	foreach ( $message as $key => $value ) {
+		?>
+
+<div class="notif <?php echo $key; ?> tip">	
+	<?php
+		echo $value;
+		
+		?>
+<a href="#" class="close">x</a>
+</div>
+
+<?php
+	}
+}
+if (isset ( $this->layout ()->message )) {
+	foreach ( $this->layout ()->message as $key => $value ) {
+		?>
+
+<div class="notif <?php echo $key; ?> tip">
+<?php
+		echo $value;
+		
+		?>
+<a href="#" class="close">x</a>
+</div>
+
+<?php
+	}
+}
+
+?>

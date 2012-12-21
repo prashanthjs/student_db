@@ -1,0 +1,26 @@
+<h1>
+		<img alt=""
+			src="<?php echo $this->baseUrl(); ?>/includes/img/icons/posts.png">
+			Create/Edit Unit Details
+	</h1>
+
+	<div class="bloc">
+		<div class="title">
+		<a class="toggle" href="#"></a>
+		</div>
+		<div class="content">
+		<?php echo $this->form; ?>
+		</div>
+	</div>
+
+
+
+<?php 
+if(isset($this->javascriptRedirection)){
+?>
+<script>
+parent.window.redirect = true;
+</script>
+<?php 
+}
+?>

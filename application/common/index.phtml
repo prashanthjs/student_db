@@ -1,0 +1,41 @@
+<h1>
+	<img alt=""
+		src="<?php echo $this->baseUrl(); ?>/includes/img/icons/posts.png">
+ <?php 
+ echo $this->title;
+ ?>
+</h1>
+
+
+<?php
+
+echo $this->render('grid.phtml');
+?>
+
+
+<br><br>
+
+<div id="grid"></div>
+
+<script type="text/x-kendo-template" id="template">
+ <div class="toolbar">
+		<div class="left input">
+		<?php
+$rurl = $this->curPageUrl();
+?>
+
+<a href="<?php
+    echo $this->url(
+    array('action' => 'enable', 'format' => 'ajax'));
+    ?>" class="k-button k-button-icontext k-grid-add bulk_operation"><span class="k-icon k-add"></span>Enable</a>
+
+		
+			<a href="<?php
+    echo $this->url(
+    array('action' => 'disable', 'format' => 'ajax'));
+    ?>" class="k-button k-button-icontext k-grid-add bulk_operation"><span class="k-icon k-cancel"></span>Disable</a>
+
+
+			
+		</div>
+</script>

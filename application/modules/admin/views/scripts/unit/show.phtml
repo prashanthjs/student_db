@@ -1,0 +1,14 @@
+<?php
+
+foreach ($this->json['data'] as &$j) {
+    $id = $j['u_id'];
+   $actions = array();
+    
+   
+        $actions[] = $this->editLink ( $id );
+        $actions[] = $this->deleteLink ( $id );
+      
+    $j['action'] = implode('&nbsp;', $actions);
+
+}
+echo json_encode($this->json);

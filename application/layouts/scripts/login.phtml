@@ -1,0 +1,60 @@
+<?php
+$this->headLink ()->appendStylesheet ( $this->baseUrl () . '/includes/css/style.css' );
+$this->headLink ()->appendStylesheet ( $this->baseUrl () . '/includes/content/settings/style.css' );
+$this->headLink ()->appendStylesheet ( $this->baseUrl () . '/includes/js/jwysiwyg/jquery.wysiwyg.old-school.css' );
+?>
+<?php
+
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/cookie/jquery.cookie.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/jwysiwyg/jquery.wysiwyg.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/tooltipsy.min.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/iphone-style-checkboxes.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/excanvas.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/zoombox/zoombox.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/visualize.jQuery.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/jquery.uniform.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/js/main.js' );
+$this->headScript ()->appendFile ( $this->baseUrl () . '/includes/content/settings/main.js' );
+?>
+
+<?php print $this->doctype(); ?>
+<html>
+<head>
+	<?php print $this->headMeta(); ?>
+	<?php print $this->headTitle(); ?>
+
+	<?php
+	
+	if ($this->jQuery ()->isEnabled ()) {
+		
+		print $this->jQuery ();
+	}
+	
+	?>
+	
+	 <?php
+		print $this->headLink ();
+		?>
+		
+        <?php
+								print $this->headScript ();
+								?>
+</head>
+<body>
+
+
+
+
+	<div id="content" class="login">
+                
+                <h1><img src="<?php echo $this->baseUrl(); ?>/includes/img/icons/lock-closed.png" alt="" />Admin panel</h1>
+                
+                <?php echo $this->render('message.phtml'); ?>
+                
+             <?php echo $this->layout()->content; ?>
+
+                
+            </div>
+
+</body>
+</html>

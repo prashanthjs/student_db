@@ -1,0 +1,154 @@
+<script>
+var grid;
+        $(function() {
+       	 grid = $("#grid").kendoGrid({
+             dataSource: {
+            	 type: "json",
+                 transport: {
+                     read: "<?php echo $this->url(array('action'=>'show')); ?>",
+                     parameterMap: function (options) {
+                         if (options.filter) {
+                             for(i=0;i<options.filter.filters.length; i++){
+
+if((options.filter.filters[i].value instanceof Date)){
+
+
+                             options.filter.filters[i].value = kendo.toString(options.filter.filters[i].value, "yyyy-MM-dd");
+
+}
+
+                             }
+                         }
+                         return options;
+                     },
+                 },
+                 schema: {
+                     data: "data",
+                     total: 'totals',
+                     model: {
+                         fields: {
+                        	 <?php
+                        foreach ($this->displayFields as $key => $value) {
+                            
+                            ?>
+                                         <?php echo $value['key'] ; ?>: { <?php
+                            
+                            if (isset($value['type'])) {
+                                echo 'type: "' . $value['type'] . '"  ';
+                            }
+                            
+                            ?> },  
+                           
+
+                                       <?php
+                        }
+                        ?>
+                         }
+                     }
+                    
+                         
+                 },
+                 sort: { field: "u_id", dir: "desc" },
+                 
+                 pageSize: 15,
+                 serverPaging: true,
+                 serverFiltering: true,
+                 serverSorting: true
+             },
+             columns: [
+                       <?php
+                    
+                    foreach ($this->displayFields as $key => $value) {
+                        if (! isset($value['visible'])) {
+                            $value['visible'] = true;
+                        }
+                        if (! $value['visible']) {
+                            continue;
+                        }
+                        ?>
+                      { title:"<?php echo $value['title']; ?>", field: "<?php echo $value['key'] ; ?>", <?php
+                        
+                        if (isset($value['type'])) {
+                            echo 'type: "' . $value['type'] . '", ';
+                        }
+                        
+                        if (isset($value['options'])) {
+                            foreach ($value['options'] as $key => $option) {
+                                echo $key . ': "' . $option . '", ';
+                            }
+                        
+                        }
+                        
+                        if (isset($value['values'])) {
+                            
+                            echo 'values : ' . $value['values'] . ' , ';
+                        
+                        }
+                        
+                        if (isset($value['width'])) {
+                            
+                            echo 'width : ' . $value['width'] . ' , ';
+                        
+                        } else {
+                            echo 'width : 75 , ';
+                        }
+                        
+                        ?> encoded: false,   },  
+
+                      <?php
+                    }
+                    ?>
+                    { 'title' : 'Action', 'field' : 'action',   encoded: false, width: 100, sortable:false, filterable:false},
+                                              ],
+             
+             filterable: true,
+             //columnMenu: true,
+             sortable: true,
+             resizable: true,
+             reorderable: true,
+             selectable:"multiple, row", 
+             toolbar: kendo.template($("#template").html()),
+             pageable: {
+                 refresh: true,
+                 pageSizes: [10, 15, 30, 50, 100, 1000]
+             },
+             width:800,
+            // groupable: true,
+             
+            
+         });
+        });
+
+
+        
+        function formatK(value){
+         return value
+            }
+        
+    </script>
+
+<script>
+    $(function(){
+     grid = $("#grid").data("kendoGrid");
+        grid.bind("dataBound", function(e) {
+     	$('a.zoombox').zoombox({
+    		animation : false,
+
+    	});
+    	tEvents();
+    	$('#grid td').each(function(){
+var value = $(this).html();
+if(value == 'null' || value == 'undefined'){
+	$(this).html('');
+}
+
+        	});
+        
+    });
+    });
+
+    function gridRefresh(){
+      
+  	  $("#grid a.k-pager-refresh").trigger("click");
+        }
+    </script>

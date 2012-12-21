@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+	<nav>
+		<dashboard>
+			<label>Dashboard</label>
+			<module>default</module>
+			<controller>index</controller>
+			<action>index</action>
+			<resource>default:index</resource>
+			<privilege>index</privilege>
+			<image>includes/img/icons/menu/inbox.png</image>
+		</dashboard>
+		
+		<student>
+			<label>Manage Student Details</label>
+			
+			<uri>#</uri>
+			<image>includes/img/icons/menu/lab.png</image>
+			<pages>
+				<student-view>
+					<label>Manage Student Details</label>
+					<module>admin</module>
+					<controller>student</controller>
+					<action>index</action>
+					
+				</student-view>
+				<student-create>
+					<label>Create Student</label>
+					<module>admin</module>
+					<controller>student</controller>
+					<action>create</action>
+					
+				</student-create>
+	
+			</pages>
+		</student>
+		
+		<course>
+			<label>Manage Course Details</label>
+			
+			<uri>#</uri>
+			<image>includes/img/icons/menu/layout.png</image>
+			<pages>
+				<course-view>
+					<label>Manage Course Details</label>
+					<module>admin</module>
+					<controller>course</controller>
+					<action>index</action>
+					
+				</course-view>
+				<course-create>
+					<label>Create Student</label>
+					<module>admin</module>
+					<controller>course</controller>
+					<action>create</action>
+					
+				</course-create>
+	
+			</pages>
+		</course>
+		
+		<unit>
+			<label>Manage Course Details</label>
+			
+			<uri>#</uri>
+			<image>includes/img/icons/menu/comment.png</image>
+			<pages>
+				<unit-view>
+					<label>Manage Unit Details</label>
+					<module>admin</module>
+					<controller>unit</controller>
+					<action>index</action>
+					
+				</unit-view>
+				<unit-create>
+					<label>Create Unit</label>
+					<module>admin</module>
+					<controller>unit</controller>
+					<action>create</action>
+					
+				</unit-create>
+	
+			</pages>
+		</unit>
+		
+		
+		
+		
+	</nav>
+</configdata>

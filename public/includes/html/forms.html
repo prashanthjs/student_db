@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Admin Panel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        
+        
+        <!-- Main stylesheed  (EDIT THIS ONE) -->
+        <link rel="stylesheet" href="../css/style.css" />
+        
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        
+        <!-- jQuery Cookie - https://github.com/carhartl/jquery-cookie -->
+        <script type="text/javascript" src="../js/cookie/jquery.cookie.js"></script>
+        
+        <!-- jWysiwyg - https://github.com/akzhan/jwysiwyg/ -->
+        <link rel="stylesheet" href="../js/jwysiwyg/jquery.wysiwyg.old-school.css" />
+        <script type="text/javascript" src="../js/jwysiwyg/jquery.wysiwyg.js"></script>
+        
+        
+        <!-- Tooltipsy - http://tooltipsy.com/ -->
+        <script type="text/javascript" src="../js/tooltipsy.min.js"></script>
+        
+        <!-- iPhone checkboxes - http://awardwinningfjords.com/2009/06/16/iphone-style-checkboxes.html -->
+        <script type="text/javascript" src="../js/iphone-style-checkboxes.js"></script>
+        <script type="text/javascript" src="../js/excanvas.js"></script>
+        
+        <!-- Load zoombox (lightbox effect) - http://www.grafikart.fr/zoombox -->
+        <script type="text/javascript" src="../js/zoombox/zoombox.js"></script>
+        
+        <!-- Charts - http://www.filamentgroup.com/lab/update_to_jquery_visualize_accessible_charts_with_html5_from_designing_with/ -->
+        <script type="text/javascript" src="../js/visualize.jQuery.js"></script>
+        
+        <!-- Uniform - http://uniformjs.com/ -->
+        <script type="text/javascript" src="../js/jquery.uniform.js"></script>
+        
+        
+        <!-- Main Javascript that do the magic part (EDIT THIS ONE) -->
+        <script type="text/javascript" src="../js/main.js"></script>
+            </head>
+    <body>
+        
+        <script type="text/javascript" src="content/settings/main.js"></script>
+<link rel="stylesheet" href="content/settings/style.css" />
+
+
+  <div class="settings" id="settings">
+        <div class="wrapper">
+            <div class="grid3">
+                <div class="titre">Backgrounds</div>
+                <a href="url(css/img/bg.png)" class="backgroundChanger active" title="White"></a>
+                <a href="url(css/img/dark-bg.png)" class="backgroundChanger dark" title="Dark"></a>
+                <a href="url(css/img/wood.jpg) fixed" class="backgroundChanger dark" title="Wood"></a>
+                <a href="url(css/img/altbg/smoothwall.png)" class="backgroundChanger" title="Smoothwall"></a>
+                <a href="url(css/img/altbg/black_denim.png) fixed" class="backgroundChanger dark" title="black_denim"></a>
+                <a href="url(css/img/altbg/carbon.gif) fixed" class="backgroundChanger dark" title="Carbon"></a>
+                <a href="url(css/img/altbg/double_lined.png) fixed" class="backgroundChanger" title="Double lined"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="grid3">
+                <div class="titre">Bloc style</div>
+                <a href="black" class="blocChanger" title="Black" style="background:url(css/img/bloctitle.png);"></a>
+                <a href="white" class="blocChanger active" title="White" style="background:url(css/img/white-title.png);"></a>
+                <a href="wood" class="blocChanger" title="Wood" style="background:url(css/img/wood-title.jpg);"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="grid3">
+                <div class="titre">Sidebar style</div>
+                <a href="grey" class="sidebarChanger active" title="Grey" style="background:#494949"></a>
+                <a href="black" class="sidebarChanger" title="Black" style="background:#262626"></a>
+                <a href="white" class="sidebarChanger" title="White" style="background:#EEEEEE"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <a class="settingbutton" href="#">
+
+        </a>
+    </div>        
+        <!--              
+                HEAD
+                        --> 
+        <div id="head">
+            <div class="left">
+                <a href="#" class="button profile"><img src="../img/icons/top/huser.png" alt="" /></a>
+                Hi, 
+                <a href="#">John Doe</a>
+                |
+                <a href="#">Logout</a>
+            </div>
+            <div class="right">
+                <form action="#" id="search" class="search placeholder">
+                    <label>Looking for something ?</label>
+                    <input type="text" value="" name="q" class="text"/>
+                    <input type="submit" value="rechercher" class="submit"/>
+                </form>
+            </div>
+        </div>
+                
+                
+        <!--            
+                SIDEBAR
+                         --> 
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <a href="index.php">
+                        <img src="../img/icons/menu/inbox.png" alt="" />
+                        Dashboard
+                    </a>
+                </li>
+                <li class="current hover"><a href="#"><img src="../img/icons/menu/layout.png" alt="" /> Elements</a>
+                    <ul>
+                                                <li><a href="index.html">Dashboard</a></li>
+                                                <li class="current"><a href="forms.html">Forms</a></li>
+                                                <li><a href="table.html">Table</a></li>
+                                                <li><a href="tabs.html">Tabs</a></li>
+                                                <li><a href="gallery.html">Gallery</a></li>
+                                                <li><a href="notif.html">Notifications</a></li>
+                                                <li><a href="charts.html">Charts</a></li>
+                                                <li><a href="typo.html">Typography</a></li>
+                                                <li><a href="icons.html">Icons</a></li>
+                                                <li><a href="calendar.html">Calendar</a></li>
+                                            </ul>
+                </li>
+                <li><a href="#"><img src="../img/icons/menu/brush.png" alt="" /> Another submenu</a>
+                    <ul>
+                        <li><a href="#">Fake menu #1</a></li>
+                        <li><a href="#">Fake menu #2</a></li>
+                        <li><a href="#">Fake menu #3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="../img/icons/menu/brush.png" alt="" /> Infinite sublevel</a>
+                    <ul>
+                        <li><a href="#">Fake menu #1</a></li>
+                        <li><a href="#">Fake menu #2</a></li>
+                        <li><a href="#">Fake menu #3</a>
+                        <ul>
+                            <li><a href="#">Fake menu #1</a></li>
+                            <li><a href="#">Fake menu #2</a></li>
+                            <li><a href="#">Fake menu #3</a>
+                                <ul>
+                                    <li><a href="#">Fake menu #1</a></li>
+                                    <li><a href="#">Fake menu #2</a></li>
+                                    <li><a href="#">Fake menu #3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nosubmenu"><a href="#"><img src="../img/icons/menu/lab.png" alt="" /> This button is useless</a></li>
+                <li class="nosubmenu"><a href="modal.html" class="zoombox w450 h700"><img src="../img/icons/menu/comment.png" alt="" /> Modal box</a></li>
+            </ul>
+            <a href="#collapse" id="menucollapse">&#9664; Collapse sidebar</a>
+
+        </div>
+                
+                
+                
+                
+        <!--            
+              CONTENT 
+                        --> 
+        <div id="content" class="white">
+                            <h1><img src="../img/icons/posts.png" alt=""> Forms</h1>
+
+<div class="bloc">
+    <div class="title">Simple inputs</div>
+    <div class="content">
+        <div class="input">
+            <label for="input1">Text input</label>
+            <input type="text" id="input1">
+            Some informations on how to use this field
+        </div>
+        <div class="input medium error">
+            <label for="input2">Medium input with error</label>
+            <input type="text" id="input2">
+            <span class="error-message">This field can't be empty !</span>
+        </div>
+        <div class="input long">
+            <label for="input3">Loooooooooong input</label>
+            <input type="text" id="input3">
+        </div>
+        <div class="input loading">
+            <label for="input4">Loading</label>
+            <input type="text" id="input4">
+        </div>
+    </div>
+</div>
+<div class="bloc left">
+    <div class="title">Radios and checkbox</div>
+    <div class="content">
+        <div class="input">
+            <label for="file">Upload a file</label>
+            <input type="file" id="file">
+        </div>
+
+        <div class="input">
+            <label class="label">Checkboxes</label>
+            <input type="checkbox" id="check1" checked><label for="check1" class="inline">This is a checkbox</label> <br>
+            <input type="checkbox" id="check2"><label for="check2" class="inline">Another one !</label> <br>
+        </div>
+        <div class="input">
+            <label class="label">Radio</label>
+            <input type="radio" id="radio1" name="radiobutton"  checked="checked"><label for="radio1" class="inline">This is a radio input</label> <br>
+            <input type="radio" id="radio2"  name="radiobutton"><label for="radio2" class="inline">And this is another radio input</label>
+        </div>
+    </div>
+</div>
+<div class="bloc right">
+    <div class="title">Select and Textarea</div>
+    <div class="content">
+        <div class="input">
+            <label for="select">This is a "select" input</label>
+            <select name="select" id="select">
+                <option value="1">First value</option>
+                <option value="2">Second value</option>
+                <option value="3">Third value</option>
+            </select>
+            Some informations on how to use this field
+        </div>
+        <div class="input textarea">
+            <label for="textarea1">Textarea</label>
+            <textarea name="text" id="textarea1" rows="7" cols="4"></textarea>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Enregistrer">
+            <input type="reset" value="Black button" class="black">
+            <input type="reset" value="White button" class="white">
+        </div>
+    </div>
+</div>
+
+<div class="cb"></div>
+
+<div class="bloc">
+    <div class="title">Advanced inputs</div>
+    <div class="content">
+        <div class="input">
+            <label for="input4">Datepicker using jQuery UI</label>
+            <input type="text" class="datepicker" id="input4">
+        </div>
+        <div class="input textarea">
+            <label for="textarea2">Autogrow WYSIWYG Textarea (<a href="https://github.com/akzhan/jwysiwyg">jwysiwyg</a>)</label>
+            <textarea name="text" id="textarea2" rows="7" class="wysiwyg" cols="4">
+                Here you <em>can have</em> some <strong>HTML Content</strong>
+            </textarea>
+        </div>
+        <div class="input">
+            <label>Range : $<span></span></label>
+            <input type="text" class="range min-10 max-60" value="35">
+        </div>
+        
+        <div class="input">
+            <label for="iphonecheck" class="label">Iphone checkbox</label>
+            <input type="checkbox" id="iphonecheck" class="iphone">
+        </div>
+        
+        
+    </div>
+</div>
+
+
+<div class="bloc">
+    <div class="title">Loading bloc</div>
+    <div class="content">
+        Adding a loading on a block is quite simple, you just have to add a div with "loader" class and this is what happen.
+        <div class="loader"></div>
+    </div>
+</div>
+
+                    </div>
+        
+        
+    </body>
+</html>

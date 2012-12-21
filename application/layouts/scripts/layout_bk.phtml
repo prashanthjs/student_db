@@ -1,0 +1,23 @@
+<?php $this->jquery()->javascriptCaptureEnd(); ?>
+<?php echo $this->doctype(); ?>
+<html>
+<head>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headTitle(); ?>
+
+	<?php  
+	
+	if($this->jQuery()->isEnabled()){
+//   		$this->jQuery()->setLocalPath($this->baseUrl().'/js/jquery/jquery.min.js')
+//   		               ->setUiLocalPath($this->baseUrl().'/js/jquery/jquery-ui.min.js')
+//   		               ->addStylesheet($this->baseUrl().'/js/jquery/css/redmond/jquery-ui.css');
+ 		echo $this->jQuery();
+	}
+	
+	?>
+</head>
+<body>
+<?php echo $this->navigation(); ?>
+<?php echo $this->layout()->content; ?>
+</body>
+</html>
